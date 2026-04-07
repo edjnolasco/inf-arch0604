@@ -1,0 +1,6 @@
+@INF._5120.Arch0604.Api_HostAddress = http://localhost:5141
+
+GET {{INF._5120.Arch0604.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

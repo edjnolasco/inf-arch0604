@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>INF._5120.Arch0604.Application</RootNamespace>
+    <RootNamespace>INF._5120.Arch0604.Infrastructure</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
+    <Folder Include="Files\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Services\" />
+    <Folder Include="Persistence\" />
   </ItemGroup>
 
 </Project>

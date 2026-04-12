@@ -1,12 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace INF._5120.Arch0604.Application.DTOs.CountryDTOs
 {
-    internal class UpdateCountryRequestDto
+    public class UpdateCountryRequestDto
     {
+        [Required]
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public required string Description { get; set; }
+
+        [Required]
+        public int IsoNum { get; set; }
+
+        [Required]
+        [StringLength(2)]
+        public required string IsoA2 { get; set; }
+
+        [Required]
+        [StringLength(3)]
+        public required string IsoA3 { get; set; }
+
+        [Required]
+        public bool IsEnable { get; set; }
     }
 }

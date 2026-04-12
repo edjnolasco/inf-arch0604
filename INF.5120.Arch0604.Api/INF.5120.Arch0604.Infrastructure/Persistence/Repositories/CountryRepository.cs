@@ -1,5 +1,7 @@
-﻿using INF._5120.Arch0604.Domain.Entities;
+﻿using INF._5120.Arch0604.Application.Interfaces;
+using INF._5120.Arch0604.Domain.Entities;
 using INF._5120.Arch0604.Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace INF._5120.Arch0604.Infrastructure.Persistence.Repositories
 {

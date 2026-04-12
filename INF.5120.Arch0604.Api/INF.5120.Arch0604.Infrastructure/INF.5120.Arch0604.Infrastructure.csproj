@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.25" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\INF.5120.Arch0604.Application\INF.5120.Arch0604.Application.csproj" />
     <ProjectReference Include="..\INF.5120.Arch0604.Domain\INF.5120.Arch0604.Domain.csproj" />
   </ItemGroup>

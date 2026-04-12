@@ -1,4 +1,5 @@
 using System.Reflection;
+using INF._5120.Arch0604.Api.Extensions;
 using INF._5120.Arch0604.Application.Interfaces;
 using INF._5120.Arch0604.Application.Services;
 using INF._5120.Arch0604.Infrastructure.Persistence.Context;
@@ -36,6 +37,8 @@ builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 
 var app = builder.Build();
+
+app.UseGlobalExceptionMiddleware();
 
 if (app.Environment.IsDevelopment())
 {

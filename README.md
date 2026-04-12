@@ -19,10 +19,12 @@ Controller → Service → Repository → DbContext
 
 ## 📁 Estructura
 
+```text
 INF.\_5120.Arch0604 ├── Api │ ├── Controllers │ ├── Middleware │ ├──
 Common │ └── Extensions ├── Application │ ├── Services │ ├── Interfaces
 │ ├── DTOs │ └── Common ├── Infrastructure │ ├── Persistence │ └──
 Repositories ├── Domain │ └── Entities └── Tests
+```
 
 ### Capas:
 

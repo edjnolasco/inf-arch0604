@@ -1,2 +1,136 @@
-# inf-arch0604
-Proyecto ejemplo para un CRUD sencillo
+# 🌍 INF5120 Arch0604 API
+
+[![.NET](https://img.shields.io/badge/.NET-8.0-blue)]()
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)]()
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
+[![Coverage](https://img.shields.io/badge/coverage-80%25+-yellowgreen)]()
+[![License](https://img.shields.io/badge/license-MIT-blue)]()
+
+API REST desarrollada en ASP.NET Core para la gestión de países,
+implementando una arquitectura en capas con separación de
+responsabilidades, validación estructurada, manejo global de excepciones
+y logging.
+
+------------------------------------------------------------------------
+
+## 🧩 Arquitectura
+
+El proyecto sigue una arquitectura basada en capas:
+
+Controller → Service → Repository → DbContext
+
+### Capas:
+
+-   API
+    -   Controladores (endpoints REST)
+    -   Middleware global de excepciones
+    -   Configuración Swagger
+-   Application
+    -   Servicios de negocio (`CountryService`)
+    -   Interfaces (`ICountryService`, `ICountryRepository`)
+    -   DTOs (Request / Response)
+    -   `ServiceResult<T>` para manejo de errores tipados
+-   Infrastructure
+    -   Implementación de repositorios
+    -   DbContext (Entity Framework Core)
+-   Domain
+    -   Entidades del dominio (`Country`)
+
+------------------------------------------------------------------------
+
+## ⚙️ Tecnologías utilizadas
+
+-   .NET 8 / ASP.NET Core
+-   Entity Framework Core
+-   SQL Server
+-   Swagger / OpenAPI
+-   xUnit (testing)
+-   InMemory Database (tests)
+-   Logging con `ILogger`
+-   Middleware global de excepciones
+
+------------------------------------------------------------------------
+
+## 📦 Funcionalidades
+
+CRUD completo de países:
+
+-   GET /api/Country
+-   GET /api/Country/{id}
+-   POST /api/Country
+-   PUT /api/Country/{id}
+-   DELETE /api/Country/{id}
+
+------------------------------------------------------------------------
+
+## 🧠 Manejo de errores
+
+El sistema implementa:
+
+-   Manejo controlado con `ServiceResult`
+-   Manejo global con middleware
+
+Ejemplo de respuesta de error:
+
+{ "statusCode": 500, "message": "Ocurrió un error interno en el
+servidor.", "traceId": "...", "timestampUtc": "..." }
+
+------------------------------------------------------------------------
+
+## 📝 Logging
+
+Se utiliza `ILogger<T>` para registrar:
+
+-   Operaciones CRUD
+-   Validaciones fallidas
+-   Duplicados
+-   Errores
+
+------------------------------------------------------------------------
+
+## 🧪 Pruebas
+
+Incluye pruebas unitarias para:
+
+-   Controller
+-   Service
+
+------------------------------------------------------------------------
+
+## 🔍 Swagger
+
+Disponible en:
+
+https://localhost:{puerto}/swagger
+
+------------------------------------------------------------------------
+
+## 🛠️ Configuración
+
+Editar en appsettings.json:
+
+"ConnectionStrings": { "DefaultConnection":
+"Server=.;Database=INF5120Db;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+
+------------------------------------------------------------------------
+
+## ▶️ Ejecución
+
+dotnet build dotnet run
+
+------------------------------------------------------------------------
+
+## 📌 Estado
+
+✔ CRUD completo\
+✔ Validación\
+✔ Manejo de errores\
+✔ Logging\
+✔ Tests
+
+------------------------------------------------------------------------
+
+## 📚 Autor
+
+Edwin José Nolasco. Proyecto de la asignatura INF-5120.

@@ -1,4 +1,5 @@
-﻿using INF._5120.Arch0604.Application.DTOs.CountryDTOs;
+﻿using INF._5120.Arch0604.Application.Common;
+using INF._5120.Arch0604.Application.DTOs.CountryDTOs;
 using INF._5120.Arch0604.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,7 +23,13 @@ namespace INF._5120.Arch0604.Api.Controllers
 
             if (!result.Success)
             {
-                return NotFound(new { result.Message });
+                return result.ErrorType switch
+                {
+                    ServiceErrorType.NotFound => NotFound(new { result.Message }),
+                    ServiceErrorType.Validation => BadRequest(new { result.Message }),
+                    ServiceErrorType.Conflict => Conflict(new { result.Message }),
+                    _ => BadRequest(new { result.Message })
+                };
             }
 
             return Ok(result.Data);
@@ -40,12 +47,18 @@ namespace INF._5120.Arch0604.Api.Controllers
 
             if (!result.Success)
             {
-                return Conflict(new { result.Message });
+                return result.ErrorType switch
+                {
+                    ServiceErrorType.Conflict => Conflict(new { result.Message }),
+                    ServiceErrorType.Validation => BadRequest(new { result.Message }),
+                    ServiceErrorType.NotFound => NotFound(new { result.Message }),
+                    _ => BadRequest(new { result.Message })
+                };
             }
 
             return CreatedAtAction(
                 nameof(GetCountryById),
-                new { id = result.Data!.Id },
+                new { id = result.Data.Id },
                 result.Data);
         }
 
@@ -61,13 +74,13 @@ namespace INF._5120.Arch0604.Api.Controllers
 
             if (!result.Success)
             {
-                if (result.Message.Contains("no coincide"))
-                    return BadRequest(new { result.Message });
-
-                if (result.Message.Contains("No se encontró"))
-                    return NotFound(new { result.Message });
-
-                return Conflict(new { result.Message });
+                return result.ErrorType switch
+                {
+                    ServiceErrorType.Validation => BadRequest(new { result.Message }),
+                    ServiceErrorType.NotFound => NotFound(new { result.Message }),
+                    ServiceErrorType.Conflict => Conflict(new { result.Message }),
+                    _ => BadRequest(new { result.Message })
+                };
             }
 
             return NoContent();
@@ -80,7 +93,13 @@ namespace INF._5120.Arch0604.Api.Controllers
 
             if (!result.Success)
             {
-                return NotFound(new { result.Message });
+                return result.ErrorType switch
+                {
+                    ServiceErrorType.NotFound => NotFound(new { result.Message }),
+                    ServiceErrorType.Validation => BadRequest(new { result.Message }),
+                    ServiceErrorType.Conflict => Conflict(new { result.Message }),
+                    _ => BadRequest(new { result.Message })
+                };
             }
 
             return NoContent();

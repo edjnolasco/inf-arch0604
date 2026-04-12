@@ -21,7 +21,8 @@ namespace INF._5120.Arch0604.Application.Services
 
             if (country is null)
             {
-                return ServiceResult<CountryResponseDto>.Fail($"No se encontró el país con Id = {id}.");
+                return ServiceResult<CountryResponseDto>.NotFound(
+                    $"No se encontró el país con Id = {id}.");
             }
 
             return ServiceResult<CountryResponseDto>.Ok(MapToResponseDto(country));
@@ -41,7 +42,7 @@ namespace INF._5120.Arch0604.Application.Services
 
             if (duplicated)
             {
-                return ServiceResult<CountryResponseDto>.Fail(
+                return ServiceResult<CountryResponseDto>.Conflict(
                     "Ya existe un país con la misma descripción, ISO numérico, ISO A2 o ISO A3.");
             }
 
@@ -68,14 +69,16 @@ namespace INF._5120.Arch0604.Application.Services
         {
             if (id != request.Id)
             {
-                return ServiceResult<bool>.Fail("El Id de la ruta no coincide con el Id enviado.");
+                return ServiceResult<bool>.Validation(
+                    "El Id de la ruta no coincide con el Id enviado.");
             }
 
             var existingCountry = await countryRepository.GetByIdAsync(id);
 
             if (existingCountry is null)
             {
-                return ServiceResult<bool>.Fail($"No se encontró el país con Id = {id}.");
+                return ServiceResult<bool>.NotFound(
+                    $"No se encontró el país con Id = {id}.");
             }
 
             var description = request.Description.Trim();
@@ -91,7 +94,7 @@ namespace INF._5120.Arch0604.Application.Services
 
             if (duplicated)
             {
-                return ServiceResult<bool>.Fail(
+                return ServiceResult<bool>.Conflict(
                     "Ya existe otro país con la misma descripción, ISO numérico, ISO A2 o ISO A3.");
             }
 
@@ -113,7 +116,8 @@ namespace INF._5120.Arch0604.Application.Services
 
             if (existingCountry is null)
             {
-                return ServiceResult<bool>.Fail($"No se encontró el país con Id = {id}.");
+                return ServiceResult<bool>.NotFound(
+                    $"No se encontró el país con Id = {id}.");
             }
 
             countryRepository.Delete(existingCountry);

@@ -5,11 +5,9 @@
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
 [![Coverage](https://img.shields.io/badge/coverage-80%25+-yellowgreen)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
+[![CI](https://github.com/edjnolasco/inf-arch0604/actions/workflows/ci.yml/badge.svg)](https://github.com/edjnolasco/inf-arch0604/actions/workflows/ci.yml)
 
-API REST desarrollada en ASP.NET Core para la gestión de países,
-implementando una arquitectura en capas con separación de
-responsabilidades, validación estructurada, manejo global de excepciones
-y logging.
+API REST desarrollada en ASP.NET Core para la gestión de países, implementando una arquitectura en capas con buenas prácticas de ingeniería de software: validación, manejo de errores, logging, pruebas unitarias y documentación con Swagger.
 
 ------------------------------------------------------------------------
 

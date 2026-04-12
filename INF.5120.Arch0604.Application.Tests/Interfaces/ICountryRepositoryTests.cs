@@ -1,5 +1,6 @@
 ﻿using INF._5120.Arch0604.Application.Interfaces;
 using INF._5120.Arch0604.Application.Tests.Mocks;
+using INF._5120.Arch0604.Infrastructure.Services.EntitiesInsert;
 
 namespace INF._5120.Arch0604.Application.Tests.Interfaces
 {

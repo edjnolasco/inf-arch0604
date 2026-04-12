@@ -7,6 +7,8 @@
     <RootNamespace>INF._5120.Arch0604.Api</RootNamespace>
     <UserSecretsId>bbd9da8f-953d-450a-85a0-8e534ec17133</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

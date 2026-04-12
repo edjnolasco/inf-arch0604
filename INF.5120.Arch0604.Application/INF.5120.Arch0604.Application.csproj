@@ -8,13 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Common\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\INF.5120.Arch0604.Api\INF.5120.Arch0604.Domain\INF.5120.Arch0604.Domain.csproj" />
   </ItemGroup>
 

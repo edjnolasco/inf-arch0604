@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using INF._5120.Arch0604.Application.Common;
+using INF._5120.Arch0604.Application.DTOs.CountryDTOs;
 
 namespace INF._5120.Arch0604.Application.Interfaces
 {
-    internal interface ICountryService
+    public interface ICountryService
     {
+        Task<ServiceResult<IEnumerable<CountryResponseDto>>> GetAllAsync();
+        Task<ServiceResult<CountryResponseDto>> GetByIdAsync(int id);
+        Task<ServiceResult<CountryResponseDto>> CreateAsync(CreateCountryRequestDto request);
+        Task<ServiceResult<bool>> UpdateAsync(int id, UpdateCountryRequestDto request);
+        Task<ServiceResult<bool>> DeleteAsync(int id);
     }
 }

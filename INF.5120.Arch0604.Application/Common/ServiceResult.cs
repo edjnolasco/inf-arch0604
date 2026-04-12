@@ -1,12 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace INF._5120.Arch0604.Application.Common
+﻿namespace INF._5120.Arch0604.Application.Common
 {
-    internal class ServiceResult
+    public class ServiceResult<T>
     {
+        public bool Success { get; set; }
+        public string Message { get; set; } = string.Empty;
+        public T? Data { get; set; }
+
+        public static ServiceResult<T> Ok(T data, string message = "")
+        {
+            return new ServiceResult<T>
+            {
+                Success = true,
+                Message = message,
+                Data = data
+            };
+        }
+
+        public static ServiceResult<T> Fail(string message)
+        {
+            return new ServiceResult<T>
+            {
+                Success = false,
+                Message = message,
+                Data = default
+            };
+        }
     }
 }

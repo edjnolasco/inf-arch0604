@@ -17,6 +17,13 @@ El proyecto sigue una arquitectura basada en capas:
 
 Controller → Service → Repository → DbContext
 
+## 📁 Estructura
+
+INF.\_5120.Arch0604 ├── Api │ ├── Controllers │ ├── Middleware │ ├──
+Common │ └── Extensions ├── Application │ ├── Services │ ├── Interfaces
+│ ├── DTOs │ └── Common ├── Infrastructure │ ├── Persistence │ └──
+Repositories ├── Domain │ └── Entities └── Tests
+
 ### Capas:
 
 -   API

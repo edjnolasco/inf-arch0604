@@ -31,11 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Helpers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\INF.5120.Arch0604.Api\INF.5120.Arch0604.Domain\INF.5120.Arch0604.Domain.csproj" />
     <ProjectReference Include="..\INF.5120.Arch0604.Api\INF.5120.Arch0604.Infrastructure\INF.5120.Arch0604.Infrastructure.csproj" />
   </ItemGroup>

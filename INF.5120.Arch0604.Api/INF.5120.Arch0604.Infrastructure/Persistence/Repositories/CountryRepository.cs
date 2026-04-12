@@ -28,9 +28,9 @@ namespace INF._5120.Arch0604.Infrastructure.Persistence.Repositories
             string isoA3,
             int? excludeId = null)
         {
-            description = description.Trim().ToUpper();
-            isoA2 = isoA2.Trim().ToUpper();
-            isoA3 = isoA3.Trim().ToUpper();
+            description = description.Trim().ToUpperInvariant();
+            isoA2 = isoA2.Trim().ToUpperInvariant();
+            isoA3 = isoA3.Trim().ToUpperInvariant();
 
             return await context.Countries.AnyAsync(c =>
                 (!excludeId.HasValue || c.Id != excludeId.Value) &&

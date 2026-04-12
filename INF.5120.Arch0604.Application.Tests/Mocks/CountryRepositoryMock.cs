@@ -9,7 +9,7 @@ namespace INF._5120.Arch0604.Application.Tests.Mocks
 
         public CountryRepositoryMock()
         {
-            Countries = new List<Country>();
+            Countries = [];
             InitializeMockRepository();
         }
 

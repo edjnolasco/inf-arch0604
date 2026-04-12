@@ -1,4 +1,4 @@
-﻿
+﻿using INF._5120.Arch0604.Application.Interfaces;
 
 namespace INF._5120.Arch0604.Infrastructure.Services.EntitiesInsert
 {

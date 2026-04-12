@@ -29,11 +29,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Mocks\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\INF.5120.Arch0604.Api\INF.5120.Arch0604.Infrastructure\INF.5120.Arch0604.Infrastructure.csproj" />
     <ProjectReference Include="..\INF.5120.Arch0604.Application\INF.5120.Arch0604.Application.csproj" />
   </ItemGroup>

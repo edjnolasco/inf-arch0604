@@ -89,12 +89,10 @@ CRUD completo de países:
 
 ## 🧠 Manejo de errores
 
-El sistema implementa:
+-   ServiceResult`<T>`{=html}
+-   Middleware global
 
--   Manejo controlado con `ServiceResult`
--   Manejo global con middleware
-
-Ejemplo de respuesta de error:
+Ejemplo:
 
 { "statusCode": 500, "message": "Ocurrió un error interno en el
 servidor.", "traceId": "...", "timestampUtc": "..." }
@@ -139,6 +137,16 @@ Editar en appsettings.json:
 
 ------------------------------------------------------------------------
 
+## 🚀 CI/CD
+
+Pipeline con GitHub Actions:
+
+-   build
+-   tests
+-   coverage (XPlat Code Coverage)
+
+------------------------------------------------------------------------
+
 ## ▶️ Ejecución
 
 dotnet build dotnet run
@@ -147,11 +155,12 @@ dotnet build dotnet run
 
 ## 📌 Estado
 
-✔ CRUD completo\
-✔ Validación\
-✔ Manejo de errores\
+✔ CRUD\
+✔ Swagger\
 ✔ Logging\
-✔ Tests
+✔ Middleware\
+✔ Tests\
+✔ CI/CD
 
 ------------------------------------------------------------------------
 

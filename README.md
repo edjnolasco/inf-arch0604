@@ -5,11 +5,9 @@
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen)]()
 [![Coverage](https://img.shields.io/badge/coverage-80%25+-yellowgreen)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
+[![CI](https://github.com/edjnolasco/inf-arch0604/actions/workflows/ci.yml/badge.svg)](https://github.com/edjnolasco/inf-arch0604/actions/workflows/ci.yml)
 
-API REST desarrollada en ASP.NET Core para la gestión de países,
-implementando una arquitectura en capas con separación de
-responsabilidades, validación estructurada, manejo global de excepciones
-y logging.
+API REST desarrollada en ASP.NET Core para la gestión de países, implementando una arquitectura en capas con buenas prácticas de ingeniería de software: validación, manejo de errores, logging, pruebas unitarias y documentación con Swagger.
 
 ------------------------------------------------------------------------
 
@@ -18,6 +16,32 @@ y logging.
 El proyecto sigue una arquitectura basada en capas:
 
 Controller → Service → Repository → DbContext
+
+## 📁 Estructura
+
+```text
+INF._5120.Arch0604
+├── Api
+│ ├── Controllers
+│ ├── Middleware
+│ ├── Common
+│ └── Extensions
+│
+├── Application
+│ ├── Services
+│ ├── Interfaces
+│ ├── DTOs
+│ └── Common
+│
+├── Infrastructure
+│ ├── Persistence
+│ └── Repositories
+│
+├── Domain
+│ └── Entities
+│
+└── Tests
+```
 
 ### Capas:
 
@@ -65,12 +89,10 @@ CRUD completo de países:
 
 ## 🧠 Manejo de errores
 
-El sistema implementa:
+-   ServiceResult`<T>`{=html}
+-   Middleware global
 
--   Manejo controlado con `ServiceResult`
--   Manejo global con middleware
-
-Ejemplo de respuesta de error:
+Ejemplo:
 
 { "statusCode": 500, "message": "Ocurrió un error interno en el
 servidor.", "traceId": "...", "timestampUtc": "..." }
@@ -115,6 +137,16 @@ Editar en appsettings.json:
 
 ------------------------------------------------------------------------
 
+## 🚀 CI/CD
+
+Pipeline con GitHub Actions:
+
+-   build
+-   tests
+-   coverage (XPlat Code Coverage)
+
+------------------------------------------------------------------------
+
 ## ▶️ Ejecución
 
 dotnet build dotnet run
@@ -123,11 +155,12 @@ dotnet build dotnet run
 
 ## 📌 Estado
 
-✔ CRUD completo\
-✔ Validación\
-✔ Manejo de errores\
+✔ CRUD\
+✔ Swagger\
 ✔ Logging\
-✔ Tests
+✔ Middleware\
+✔ Tests\
+✔ CI/CD
 
 ------------------------------------------------------------------------
 
